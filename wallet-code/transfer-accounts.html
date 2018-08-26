@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>转账</title>
+    <link rel="stylesheet" href="./transfer-accounts.css">
+</head>
+<body>
+    <div id="address">
+        <p class="transfer-p">钱包地址</p>
+        <input type="text" placeholder="输入地址" class="transfer-input">
+    </div>
+    <div id="accounts">
+        <p class="transfer-p">金额</p>
+        <input type="text" placeholder="输入金额并选择币种" class="transfer-input account-input">
+        <input type="button" value="BTC" class="choice">
+        <div class="currency-display">
+            <div class="currency">
+                <p><span>USDT</span></p>
+                <p><span>LTC</span></p>
+                <p><span>NEO</span></p>
+                <p><span>ETH</span></p>
+                <p><span>EOS</span></p>
+                <p><span>XUC</span></p>
+                <p><span>ETC</span></p>
+                <p><span>BCH</span></p>
+                <p><span>OKB</span></p>
+                <p><span>BTC</span></p>
+            </div>
+        </div>
+        <div class="single"></div>
+    </div>
+    <div id="confirm">
+        <input type="button" value="确认">
+    </div>
+
+    <div class="keyboard-display">
+        <div id="keyboard">
+            <div class="keyboard-left">
+                <input type="button" value="1">
+                <input type="button" value="2">
+                <input type="button" value="3">
+                <input type="button" value="4">
+                <input type="button" value="5">
+                <input type="button" value="6">
+                <input type="button" value="7">
+                <input type="button" value="8">
+                <input type="button" value="9">
+                <input type="button" value=".">
+                <input type="button" value="0">
+                <input type="button" value="收起">
+            </div>
+            <div class="keyboard-right">
+                <input type="button">
+                <input type="button" value="确认">
+                <img src="./delete.png">
+            </div>
+        </div>
+    </div>
+
+    <script src="./transfer.js"></script>
+</body>
+</html>
