@@ -62,6 +62,7 @@ li {
   border-radius: 0.67114094vh;
   position: absolute;
   bottom: -24.81730052vh;
+  left: -3px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -75,6 +76,7 @@ li {
   display: block;
   margin-top: 2.14765101vh;
   margin-left: 2.81879195vh;
+  font-weight: bold;
 }
 #accounts .single {
   width: 0;
@@ -133,10 +135,9 @@ li {
   border: 1px solid #cccccc;
   position: relative;
 }
-#keyboard .keyboard-right input {
+#keyboard .keyboard-right div {
   width: 15.83892617vh;
   height: 15.8836689vh;
-  background-color: rgba(0, 0, 0, 0);
 }
 #keyboard .keyboard-right img {
   width: 3.80313199vh;
@@ -146,6 +147,8 @@ li {
   left: 6.04026846vh;
 }
 #keyboard .keyboard-right input:nth-child(2) {
+  width: 15.83892617vh;
+  height: 15.8836689vh;
   background-color: #108ee9;
   color: #fff;
   font-size: 2.23713647vh;
