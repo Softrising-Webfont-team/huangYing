@@ -12,9 +12,15 @@ input {
 li {
   list-style: none;
 }
+#container {
+  width: 100vw;
+  height: 100vh;
+}
 #address {
   width: 42.14765101vh;
-  margin: 11.4541387vh auto auto auto;
+  padding-top: 11.4541387vh;
+  margin-left: auto;
+  margin-right: auto;
 }
 .transfer-p {
   font-size: 2.14765101vh;
@@ -69,7 +75,7 @@ li {
 #accounts .currency p {
   width: 14.13870246vh;
   height: 6.20432513vh;
-  font-size: 2.01342282vh;
+  font-size: 2.68456376vh;
   color: #818385;
 }
 #accounts .currency p span {
@@ -106,7 +112,7 @@ li {
   width: 55.83892617vh;
   height: 32.48322148vh;
   position: absolute;
-  bottom: 0.89485459vh;
+  bottom: 0.71588367vh;
   left: 0;
   right: 0;
   margin-left: auto;

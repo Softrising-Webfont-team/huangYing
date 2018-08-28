@@ -6,7 +6,7 @@ var currency = document.querySelectorAll(".currency p span"),
     accountInput = document.querySelector('.account-input'),
     currencyClick = true,
     deleteAccout = document.getElementById('delete'),
-    confirm = document.getElementById('confirm'),
+    affirm = document.getElementById('confirm'),
     sub = document.getElementById('sub');
 
 choice.onclick = function () {
@@ -21,13 +21,14 @@ choice.onclick = function () {
     }
 };
 
-
-(function() {
+//选择币种
+(function () {
     for (var i = 0; i < currency.length; i++) {
         (function (i) {
             currency[i].onclick = function () {
                 choice.value = currency[i].innerText;
                 document.querySelector('.currency-display').style.display = 'none';
+                document.querySelector('.single').style.display = 'none';
                 currencyClick = !currencyClick;
             }
         })(i);
@@ -39,9 +40,12 @@ accountInput.onclick = function (event) {
     event.stopPropagation();
     keyboard.style.display = 'block';
 }
+//输入金额 禁止键盘输入
 accountInput.onfocus = function (event) {
+    this.blur();
     event.stopPropagation();
     keyboard.style.display = 'block';
+    event.preventDefault();
     accountInput.onkeydown = function () {
         return false;
     }
@@ -56,39 +60,46 @@ accountInput.onfocus = function (event) {
     }
 }
 
-accountInput.onblur = function (event) {
+accountInput.onblur = function () {
     return false;
 };
 
-document.onclick = function () {
+document.getElementById('container').onclick = function () {
     keyboard.style.display = 'none';
 };
 
-(function() {
-    for (var i = 0; i < account.length - 1; i++) {
-        (function(i) {
+(function () {
+    for (var i = 0; i < account.length; i++) {
+        (function (i) {
             account[i].onclick = function (event) {
-                accountInput.value = accountInput.value + account[i].value;
-                event.stopPropagation();
-                keyboard.style.display = 'block';
+                var re = /[0-9]|\./;
+                if (re.test(account[i].value)) {
+                    accountInput.value = accountInput.value + account[i].value;
+                    event.stopPropagation();
+                    keyboard.style.display = 'block';
+                }
             }
         })(i);
     }
 })();
 
-account[account.length - 1].onclick = function () {
+//收起
+document.getElementById('takeUp').onclick = function () {
     keyboard.style.display = 'none';
 };
 
 deleteAccout.onclick = function (event) {
+    //禁止冒泡到document 防止收起键盘
     event.stopPropagation();
     accountInput.value = accountInput.value.substring(0, accountInput.value.length - 1);
 }
 
-confirm.onclick = function () {
+//确认
+affirm.onclick = function () {
     submission();
 }
 
+//确认金额
 sub.onclick = function (event) {
     keyboard.style.display = 'none';
     event.stopPropagation();
@@ -109,9 +120,23 @@ function submission() {
         }
     }
 
-    var disagree = /^[.]/;
-    if (disagree.test(accountInput.value)) {
-        alert('金额格式不合要求');
+    if (addressInput.value.length !== 16) {
+        alert('地址应为16位');
+        addressInput.value = '';
+        return;
+    }
+
+
+    var disagree = /^[.]|\.$/;
+    var disagree2 = /^[0-9]+(\.[0-9]{0,6})?$/;
+    var disagree3 = /\./g;
+    console.log(accountInput.value.match(disagree3));
+    if(disagree.test(accountInput.value) || accountInput.value.match(disagree3).length>1){
+        alert('金额格式不合');
+        return;
+    }
+     if(!disagree2.test(accountInput.value)){
+        alert('小数点后只能保留六位');
         return;
     }
     ajax({
@@ -122,10 +147,10 @@ function submission() {
             account: accountInput.value
         },
         dataType: 'JSON',
-        success: function () {
+        "success": function () {
             alert('success');
         },
-        fail: function (status) {
+        "fail": function (status) {
             switch (status) {
                 case "404":
                     alert('找不到页面');
