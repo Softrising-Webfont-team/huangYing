@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>转账</title>
-    <link rel="stylesheet" href="./transfer-accounts.css">
+    <link rel="stylesheet" href="./css/transfer-accounts.css">
+    <link rel="stylesheet" type="text/css" href="./css/headFoot.css">
 </head>
 <body>
     <div id="container">
+        <div class="comHead">转账</div>
         <div id="address">
             <p class="transfer-p">钱包地址</p>
             <input type="text" placeholder="输入地址" class="transfer-input">
@@ -53,14 +55,34 @@
                 </div>
                 <div class="keyboard-right">
                     <div id="delete">
-                        <img src="./delete.png">
+                        <img src="./img/delete.png">
                     </div>
                     <input type="button" value="确认" id="sub">
                 </div>
             </div>
         </div>
+
+        <div class="comFoot">
+            <a href="./transfer-accounts.html" class="transferAccounts">
+                <i class="iconfont" id="ironAccount" style="color:#3f80cc;">&#xe626;</i>
+                <p class="iconWord">转账</p>
+            </a>
+            <a href="./transcationRecord.html" class="transcationRecord">
+                <i class="iconfont" id="ironRecord">&#xe60f;</i>
+                <p class="iconWord">交易记录</p>
+            </a>
+            <a href="./exchange.html" class="exchange">
+                <i class="iconfont" id="ironExchagne">&#xe64c;</i>
+                <p class="iconWord">兑换</p>
+            </a>
+            <a href="mine.html" class="mine">
+                <i class="iconfont" id="ironMine">&#xe60b;</i>
+                <p class="iconWord">我的</p>
+            </a>
+
+        </div>
     </div>
-    <script src="./common.js"></script>
-    <script src="./transfer-accounts.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/transfer-accounts.js"></script>
 </body>
 </html>

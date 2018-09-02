@@ -1,0 +1,167 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+input {
+  outline: none;
+  border: none;
+}
+li {
+  list-style: none;
+}
+#container {
+  width: 100vw;
+  height: 100vh;
+}
+#address {
+  width: 42.14765101vh;
+  padding-top: 11.4541387vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+.transfer-p {
+  font-size: 2.14765101vh;
+  letter-spacing: 0.44742729vh;
+  color: #5a5858;
+  margin-bottom: 1.34228188vh;
+}
+.transfer-input {
+  width: 38.12080537vh;
+  height: 7.42729306vh;
+  border: 2px solid #dcdcdc;
+  background-color: #fff;
+  border-radius: 10px;
+  font-size: 1.8344519vh;
+  padding: 0 2.01342282vh;
+  letter-spacing: 0.35794183vh;
+}
+#accounts {
+  width: 42.14765101vh;
+  margin: 2.37136465vh auto auto auto;
+  position: relative;
+}
+#accounts .transfer-input {
+  width: 32.34899329vh;
+  height: 7.42729306vh;
+  padding: 0 7.7852349vh 0 2.01342282vh;
+}
+#accounts .choice {
+  width: 7.7852349vh;
+  height: 7.42729306vh;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 2.68456376vh;
+  color: #108ee9;
+}
+#accounts .currency-display {
+  display: none;
+}
+#accounts .currency {
+  width: 42.41610738vh;
+  background-color: #f6f6f7;
+  border-radius: 0.67114094vh;
+  position: absolute;
+  bottom: -24.81730052vh;
+  left: -3px;
+  display: flex;
+  flex-wrap: wrap;
+}
+#accounts .currency p {
+  width: 14.13870246vh;
+  height: 6.20432513vh;
+  font-size: 2.68456376vh;
+  color: #818385;
+}
+#accounts .currency p span {
+  display: block;
+  margin-top: 2.14765101vh;
+  margin-left: 2.81879195vh;
+  font-weight: bold;
+}
+#accounts .single {
+  width: 0;
+  border-width: 0 1.0738255vh 1.78970917vh 1.0738255vh;
+  border-color: transparent transparent #f6f6f7 transparent;
+  border-style: solid;
+  position: absolute;
+  bottom: 0;
+  right: 1.56599553vh;
+  display: none;
+}
+#confirm {
+  width: 42.23713647vh;
+  height: 6.48769575vh;
+  margin: 5.27964206vh auto auto auto;
+}
+#confirm input {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.89485459vh;
+  background-color: #108ee9;
+  color: #fff;
+  font-size: 2.68456376vh;
+  letter-spacing: 0.44742729vh;
+}
+#keyboard {
+  width: 55.83892617vh;
+  height: 32.48322148vh;
+  position: absolute;
+  bottom: 0.71588367vh;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f6f6f7;
+  display: flex;
+  z-index: 3;
+}
+#keyboard .keyboard-left {
+  width: 39.59731544vh;
+  height: 32.48322148vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+#keyboard .keyboard-left input {
+  border: 1px solid #cccccc;
+  width: 13.19910515vh;
+  height: 8.12080537vh;
+  display: block;
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 2.37136465vh;
+}
+#keyboard .keyboard-right {
+  width: 15.83892617vh;
+  height: 32.48322148vh;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #cccccc;
+  position: relative;
+}
+#keyboard .keyboard-right div {
+  width: 15.83892617vh;
+  height: 15.8836689vh;
+}
+#keyboard .keyboard-right img {
+  width: 3.80313199vh;
+  height: 3.6689038vh;
+  position: absolute;
+  top: 6.39821029vh;
+  left: 6.04026846vh;
+}
+#keyboard .keyboard-right input:nth-child(2) {
+  width: 15.83892617vh;
+  height: 15.8836689vh;
+  background-color: #108ee9;
+  color: #fff;
+  font-size: 2.23713647vh;
+  letter-spacing: 0.44742729vh;
+}
+.keyboard-display {
+  display: none;
+}
+/*# sourceMappingURL=transfer-accounts.css.map */
