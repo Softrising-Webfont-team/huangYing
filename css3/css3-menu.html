@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>下拉菜单</title>
+    <style>
+        *{margin:0;padding:0;}
+        #box {
+            width:100px;
+            height:400px;
+            margin:100px 300px;
+            font-size:18px;
+            letter-spacing:5px;
+            text-align:center;
+        }
+        .menu-header {
+            width:100%;
+            height:35px;
+            border:1px solid #05008c;
+            border-radius:3px;
+            position:relative;
+        }
+        .menu-header p:nth-child(2) {
+            position:absolute;
+            right:5px;
+            width:15px;
+            height:15px;
+            top:0;
+            cursor:pointer;
+        }
+        .menu-header p {
+            line-height:1.8;
+        }
+        .menu-show>div {
+            width:100%;
+            height:35px;
+            border:1px solid #b7b6b5;
+            line-height:1.8;
+            border-radius:3px;
+            opacity: 0;
+            color: #5f9ea0;
+            cursor: pointer;
+        }
+        .menu-show {
+            animation:0.5s show forwards;
+        }
+        .menu-leave {
+            animation:0.5s leave forwards;
+        }
+        .menu-show>div:hover {
+            background-color: #edf8f7;
+            color: #2c3db7;
+        }
+        .menu-show .menu-show2 {
+            animation-delay: 100ms;
+        }
+        .menu-show .menu-show3 {
+            animation-delay: 200ms;
+        }
+        .menu-show .menu-show4 {
+            animation-delay: 300ms;
+        }
+        .menu-show .menu-show5 {
+            animation-delay: 400ms;
+        }
+        .menu-show .menu-show6 {
+            animation-delay: 500ms;
+        }
+
+        @keyframes show {
+            0% {
+                transform: translateY(-50px);
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes leave {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-50px);
+                opacity:0;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div class="menu-header">
+        <p>美食</p>
+        <p class="triangle">▼</p>
+    </div>
+    <div class="menu-show">
+        <div class="menu-show1">蛋糕</div>
+        <div class="menu-show2">煎饼</div>
+        <div class="menu-show3">川菜</div>
+        <div class="menu-show4">芝士</div>
+        <div class="menu-show5">特色小吃</div>
+        <div class="menu-show6">泡面</div>
+    </div>
+</div>
+
+<script>
+    var triangle = document.querySelector('.menu-header .triangle');
+    var menus = document.querySelectorAll('.menu-show div');
+    var flag = true;
+    triangle.onclick = function(){
+        if(flag) {
+            document.querySelector('.menu-show').style.display = 'block';
+            for (var i = 0; i < menus.length; i++) {
+                menus[i].className = "menu-show" + (i + 1) + " menu-show";
+            }
+            flag = false;
+        } else {
+            document.querySelector('.menu-show').style.display = 'none';
+            flag = true;
+        }
+    }
+</script>
+</body>
+</html>
