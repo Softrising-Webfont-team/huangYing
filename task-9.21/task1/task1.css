@@ -1,0 +1,136 @@
+*{padding:0;margin:0;}
+a{text-decoration:none;}
+input{outline:none;}
+li{list-style:none;}
+
+*{padding:0;margin:0;}
+li{list-style: none;}
+#container {
+    display: flex;
+}
+#side {
+    width:10%;
+    height:93%;
+    background-color:#263238;
+    padding-top:3%;
+    padding-bottom: 3%;
+    position:fixed;
+    left:0;
+    top:0;
+    overflow:hidden;
+}
+#side li {
+    color: rgba(255,255,255,0.3);
+    text-align: center;
+    /*border:1px solid crimson;*/
+    cursor:pointer;
+    transition:all 0.5s;
+}
+#side li:hover {
+    background-color:#5d5d5d;
+    color:#fff;
+}
+#side .side-du {
+    height:94%;
+    overflow: hidden;
+}
+#side .side-ul1 {
+    height:100%;
+    position:relative;
+}
+#side .side-ul1>li {
+    font-size:20px;
+    letter-spacing:5px;
+    padding:10px 0;
+}
+#side .side-ul2 {
+    display:none;
+    animation:0.8s li-show forwards;
+}
+#side .side-ul2>li {
+    font-size:18px;
+    padding:8px;
+}
+#click-bottom {
+    color:#fff;
+    position:absolute;
+    left:47%;
+    bottom:7%;
+    font-size:20px;
+    cursor: pointer;
+    display: none;
+}
+#click-top {
+    color:#fff;
+    position:absolute;
+    left:47%;
+    top:2%;
+    font-size:20px;
+    cursor: pointer;
+    display: none;
+    transform: rotate(180deg);
+}
+#content {
+    width:90%;
+    position:fixed;
+    right:0;
+    top:0;
+}
+#content .content-nav {
+    width:100%;
+    height:50px;
+    border-bottom:1px solid cadetblue;
+    overflow: hidden;
+}
+#content .content-main {
+    padding:10px;
+}
+.nav-ul {
+    height:30px;
+    margin-top:17px;
+}
+.nav-ul>li {
+    float:left;
+    width:10%;
+    height:100%;
+    border:1px solid cadetblue;
+    border-radius:10px 10px 0 0;
+    animation:0.5s li-scale forwards;
+    position:relative;
+    cursor:pointer;
+}
+.nav-ul>li>p {
+    width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+    line-height: 200%;
+    font-size:16px;
+}
+.nav-ul>li .nav-cancel {
+    position:absolute;
+    right:5%;
+    top:10%;
+}
+
+/*---------------------*/
+@keyframes li-show {
+    0% {
+        transform:translateY(-20px);
+        opacity:0;
+        z-index:0;
+    }
+    100% {
+        transform:translateY(0);
+        z-index:0;
+    }
+}
+@keyframes li-scale {
+    0% {
+        transform:scale(1,0);
+    }
+    100% {
+        transform:scale(1,1);
+    }
+}
